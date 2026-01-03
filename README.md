@@ -3,4 +3,6 @@ barbones builders
 
 sudo apt install dietlibc-dev
 
-gcc -m32 -nostdlib hello.c -L/usr/lib/diet -lc -lgcc -o hello
+nasm -f elf32 start.asm -o start.o
+
+gcc -m32 -nostdlib start.o hello.c -L/usr/lib/diet -lc -lgcc -o hello
